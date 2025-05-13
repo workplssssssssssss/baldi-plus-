@@ -183,7 +183,7 @@
             mergeFiles(getParts("game.zip", 1, 2)).then(async url => {
                 window.gameZipUrl = url;
                 let renpypre = document.createElement("script");
-                renpypre.src = "renpy-pre.js"
+                renpypre.src = "https://cdn.jsdelivr.net/gh/genizy/web-port@20899901c3c46fb45ed370a8d1eba815d10b3ab3/class-of-09/renpy-pre.js"
                 let renpy = document.createElement("script");
                 renpy.src = "renpy.js"
                 document.body.appendChild(renpypre);
