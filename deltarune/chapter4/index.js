@@ -529,12 +529,12 @@
 		// Verify Files
       function manifestFilesMD5()
       {
-        return [ "dd2a8012f6c9b4d718649e18f33b520c",
+        return [ "e5380a52e20e829fcbb42f91024dbe16",
         "536954f7cf0f327a3f882f6d16864100",
         "6f323d3c886b09bf86db95ecfef4b507",
         "e8f1e8db8cf996f8715a6f2164c2e44e",
         "b918e8a58a182e585f600d51155925af",
-        "6991dedb644f57e42ba1f185166d5b1b",
+        "3920071d488f068d9fd260ee9d46df91",
         "2fc5b74f09deda1642ad16499961245d",
         "5702b26db546b5fa9c26289b9bc43b93",
         "063bd2ff1f1911c99b0697d14308c1c1",
