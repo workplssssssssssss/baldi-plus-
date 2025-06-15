@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@53d2317fcef61c51a3cee88162c3434b4286fae8/deltarune/chapter1/">
+    <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@4880ed277b0e5efabfaa44900fe6924f5d398dff/deltarune/chapter1/">
+    <script>
+      // better debugging for me
+      const ogalert = window.alert;
+      window.alert = function(message) {
+        ogalert(document.querySelector('base')?.href.split("https://cdn.jsdelivr.net/gh/genizy/web-port@")[1]+"\n"+message)
+      };
+    </script>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
