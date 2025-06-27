@@ -1,0 +1,3 @@
+[submodule "fnaf"]
+	path = fnaf
+	url = https://github.com/genizy/fnaf
