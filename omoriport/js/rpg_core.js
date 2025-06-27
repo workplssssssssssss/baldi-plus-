@@ -2075,7 +2075,7 @@ Graphics.hideFps = function() {
 Graphics.loadFont = function(name, url) {
     var style = document.createElement('style');
     var head = document.getElementsByTagName('head');
-    url = "fonts"+url.split("/").pop();
+    url = "fonts/"+url.split("/").pop();
     var rule = '@font-face { font-family: "' + name + '"; src: url("' + url + '"); }';
     style.type = 'text/css';
     head.item(0).appendChild(style);
