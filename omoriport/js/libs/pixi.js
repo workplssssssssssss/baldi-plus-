@@ -5136,7 +5136,7 @@ var Resource = exports.Resource = function () {
          *
          * @member {string}
          */
-        this.crossOrigin = options.crossOrigin === true ? 'anonymous' : options.crossOrigin;
+        this.crossOrigin = 'anonymous';
 
         /**
          * A timeout in milliseconds for the load. If the load takes longer than this time
@@ -5444,7 +5444,7 @@ var Resource = exports.Resource = function () {
 
         // if unset, determine the value
         if (this.crossOrigin === false || typeof this.crossOrigin !== 'string') {
-            this.crossOrigin = this._determineCrossOrigin(this.url);
+            this.crossOrigin = "anonymous";
         }
 
         switch (this.loadType) {
@@ -5566,12 +5566,13 @@ var Resource = exports.Resource = function () {
             this.data = this.metadata.loadElement;
         } else if (type === 'image' && typeof window.Image !== 'undefined') {
             this.data = new Image();
+            this.data.crossOrigin = "anonymous";
         } else {
             this.data = document.createElement(type);
         }
 
         if (this.crossOrigin) {
-            this.data.crossOrigin = this.crossOrigin;
+            this.data.crossOrigin = "anonymous";
         }
 
         if (!this.metadata.skipSource) {
@@ -6634,6 +6635,7 @@ function blobMiddlewareFactory() {
                 // this is an image, convert the binary string into a data url
                 if (type && type.indexOf('image') === 0) {
                     resource.data = new Image();
+                    resource.data.crossOrigin = "anonymous";
                     resource.data.src = 'data:' + type + ';base64,' + (0, _b.encodeBinary)(resource.xhr.responseText);
 
                     resource.type = _Resource.Resource.TYPE.IMAGE;
@@ -6655,6 +6657,7 @@ function blobMiddlewareFactory() {
 
                     resource.blob = resource.data;
                     resource.data = new Image();
+                    resource.data.crossOrigin = "anonymous";
                     resource.data.src = src;
 
                     resource.type = _Resource.Resource.TYPE.IMAGE;
@@ -22152,7 +22155,7 @@ var CanvasTinter = {
         if (CanvasTinter.convertTintToImage) {
             // is this better?
             var tintImage = new Image();
-
+            tintImage.crossOrigin = "anonymous";
             tintImage.src = canvas.toDataURL();
 
             texture.tintCache[stringColor] = tintImage;
@@ -26053,12 +26056,7 @@ var BaseTexture = function (_EventEmitter) {
             // new Image() breaks tex loading in some versions of Chrome.
             // See https://code.google.com/p/chromium/issues/detail?id=238071
             var image = new Image(); // document.createElement('img');
-
-            if (crossorigin === undefined && imageUrl.indexOf('data:') !== 0) {
-                image.crossOrigin = (0, _determineCrossOrigin2.default)(imageUrl);
-            } else if (crossorigin) {
-                image.crossOrigin = typeof crossorigin === 'string' ? crossorigin : 'anonymous';
-            }
+            image.crossOrigin = "anonymous";
 
             baseTexture = new BaseTexture(image, scaleMode);
             baseTexture.imageUrl = imageUrl;
@@ -30815,7 +30813,7 @@ var CanvasExtract = function () {
 
     CanvasExtract.prototype.image = function image(target) {
         var image = new Image();
-
+        image.crossOrigin = "anonymous";
         image.src = this.base64(target);
 
         return image;
@@ -31021,7 +31019,7 @@ var WebGLExtract = function () {
 
     WebGLExtract.prototype.image = function image(target) {
         var image = new Image();
-
+        image.crossOrigin = "anonymous";
         image.src = this.base64(target);
 
         return image;
