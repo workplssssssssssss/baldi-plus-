@@ -14,14 +14,18 @@ all games are hosted on https://gn-math.github.io
 - Pizza Tower
 - Undertale
 
+[irv77](https://github.com/irv77):
+- FNAF (i fixed some bugs & added fnaf 4 halloween)
+
 [Me](https://github.com/genizy): 
-- Balatro
+- Andy's Apple Farm
 - BFDI: Branches
 - Buckshot Roulette
 - Class of '09
 - Deltarune
 - Do NOT Take This Cat Home
 - Happy Sheepies
+- OMORI
 - Speed Stars
 - That's Not My Neighbor
 - Web Fishing
