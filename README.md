@@ -13,6 +13,7 @@ all games are hosted on https://gn-math.github.io
 [burnedpopcorn](https://github.com/burnedpopcorn):
 - Pizza Tower
 - Undertale
+- Undertale Yellow
 
 [irv77](https://github.com/irv77):
 - FNAF (i fixed some bugs & added fnaf 4 halloween)
