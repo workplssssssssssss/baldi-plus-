@@ -29,5 +29,6 @@ all games are hosted on https://gn-math.github.io
 - Speed Stars
 - That's Not My Neighbor
 - Web Fishing
+- Yume Nikki
 
 All the games here are hosted on my unblocked games website, [gn-math](https://gn-math.github.io), meant to be played online at school. If you have any suggestions for a game, join my [discord](https://discord.gg/D4c9VFYWyU)
