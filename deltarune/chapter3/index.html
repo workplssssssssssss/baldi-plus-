@@ -455,10 +455,28 @@
 
         const message = args.join(' ');
         if (message.includes("Videos dont work on gamemaker web export. - breadbb")) {
-          alert("Videos dont work on gamemaker web export. - breadbb");
+          GM_pause();
+          const video = document.createElement("video");
+          video.src = "vid/tennaintrof1_compressed_28.mp4";
+          video.style.position = "absolute";
+          video.style.top = "0";
+          video.style.left = "0";
+          video.style.width = "100vw";
+          video.style.height = "100vh";
+          video.style.objectFit = "cover";
+          video.style.zIndex = "9999";
+          video.style.pointerEvents = "none";
+          video.autoplay = true;
+          video.controls = false;
+          video.muted = false;
+          video.playsInline = true;
+          document.body.appendChild(video);
+          video.addEventListener("ended", () => {
+            document.body.removeChild(video);
+            resume();
+          });
         }
       };
-
     </script>
   </body>
 </html>
