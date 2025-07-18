@@ -67,20 +67,26 @@
   <script>
     const audio = document.getElementById('drone');
     const mute = document.getElementById('mute');
+    let gamestarted = false;
   
     mute.addEventListener('click', () => {
-      audio.muted = !audio.muted;
-      updateButton();
+      if (!gamestarted) {
+        audio.muted = !audio.muted;
+        updateButton(); 
+      }
     });
   
     function updateButton() {
-      mute.textContent = audio.muted ? '🔊' : '🔇';
+      if (!gamestarted) {
+        mute.textContent = audio.muted ? '🔊' : '🔇';
+      }
     }
   
     updateButton();
 
     function loadChapter(chapter) {
       fetch(`chapter${chapter}/index.html`).then(res => res.text()).then(html => {
+        gamestarted = true;
         document.documentElement.innerHTML = html;
         document.documentElement.querySelectorAll('script').forEach(oldScript => {
           const newScript = document.createElement('script');
@@ -100,18 +106,23 @@
     const menuselectaudio = new Audio('audios/snd_select.mp3');
     document.querySelectorAll('.row').forEach(row => {
       row.addEventListener('mouseenter', () => {
-        menumoveaudio.play();
-        if (selectedChapter) {
-          document.querySelectorAll('.row')[selectedChapter].classList.remove("selected");
+        if (!gamestarted) {
+          menumoveaudio.play();
+          if (selectedChapter) {
+            document.querySelectorAll('.row')[selectedChapter].classList.remove("selected");
+          }
         }
       });
       row.addEventListener('click', () => {
-        menuselectaudio.play();
+        if (!gamestarted) {
+          menuselectaudio.play();
+        }
       });
     });
 
     let selectedChapter = null;
     document.addEventListener('keydown', function(event) {
+      if (!gamestarted) {
       if (event.key === 'ArrowUp') {
         if (selectedChapter === null) {
           selectedChapter = 0;
@@ -149,6 +160,7 @@
           window.location.href = document.querySelectorAll('.row')[selectedChapter].href;
           menuselectaudio.play();
         } 
+      }
       }
     });
   </script>
