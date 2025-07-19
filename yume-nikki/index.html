@@ -120,10 +120,19 @@
         #apad>*:not(.active) {
             opacity: 0.4;
         }
+        #overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            z-index: 9999;
+        }
     </style>
 </head>
 
 <body>
+    <div id="overlay"></div>
     <div id="controls">
         <button id="controls-fullscreen" class="unselectable">
             <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
@@ -338,6 +347,22 @@
             // });
         }
         updateTouchControlsVisibility();
+
+        const xyz = "00000005.xyz";
+        const overlay = document.getElementById("overlay");
+        const ogxhr = window.XMLHttpRequest;
+        function xhrfunc() {
+            const xhr = new ogxhr();
+            const open = xhr.open;
+            xhr.open = function (method, url, ...rest) {
+                if (url.includes(xyz)) {
+                overlay?.remove();
+                }
+                return open.call(this, method, url, ...rest);
+            };
+            return xhr;
+        }
+        window.XMLHttpRequest = xhrfunc;
     </script>
 </body>
 
