@@ -18,7 +18,11 @@ all games are hosted on https://gn-math.github.io
 [irv77](https://github.com/irv77):
 - FNAF (i fixed some bugs & added fnaf 4 halloween)
 
+[bog/aukak](https://github.com/aukak):
+- Milkman Karlson
+
 [Me](https://github.com/genizy): 
+- Amanda the Adventurer
 - Andy's Apple Farm
 - BFDI: Branches
 - Buckshot Roulette
@@ -26,7 +30,9 @@ all games are hosted on https://gn-math.github.io
 - Deltarune
 - Do NOT Take This Cat Home
 - Happy Sheepies
+- Kindergarten 1 & 2
 - OMORI
+- Slender: The 8 Pages
 - Speed Stars
 - That's Not My Neighbor
 - Web Fishing
