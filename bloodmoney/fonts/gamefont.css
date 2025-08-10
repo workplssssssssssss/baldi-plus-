@@ -1,0 +1,24 @@
+@font-face {
+    font-family: GameFont;
+    src: url("Comic Kids.ttf");
+}
+
+.IIV::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    opacity: 0;
+    pointer-events: none;
+    width: 5px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+}
+canvas {
+    display: block;
+    width: 100vw !important;
+    height: 100vh !important;
+}
