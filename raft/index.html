@@ -82,6 +82,25 @@ function mergeFiles(fileParts) {
 	});
 }
 
+UnityLoader.downloadJob = function(e, t) {
+        var r = new XMLHttpRequest;
+        if (t.parameters.url.startsWith("Build/blob")) {
+          r.open("GET", t.parameters.url.replace("Build/", ""));
+        } else {
+          r.open("GET", t.parameters.url);
+        }
+        r.responseType = "arraybuffer",
+        r.onload = function() {
+            UnityLoader.Compression.decompress(new Uint8Array(r.response), function(e) {
+                t.complete(e)
+            })
+        }
+        ,
+        t.parameters.onprogress && r.addEventListener("progress", t.parameters.onprogress),
+        t.parameters.onload && r.addEventListener("load", t.parameters.onload),
+        r.send()
+    };
+
 function getParts(file, start, end) {
 	let parts = [];
 	for (let i = start; i <= end; i++) {
