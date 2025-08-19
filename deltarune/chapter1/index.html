@@ -474,9 +474,9 @@
 			  // below are custom
 			  // stops loading text on game run
 			  loadprogress += 1;
-              // This Forces 1920x1080 aspect ratio on game startup
-              canvas.width = 1920;
-              canvas.height = 1080;
+              // Forcing 1920 x 1080 breaks the resolution, forcing 1280 x 960 instead.
+              canvas.width = 1280;
+              canvas.height = 960;
 
 			  // TRUE END of custom shit
             }
