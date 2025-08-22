@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+<base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/dead-plate/">
         <meta charset="UTF-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -25,5 +26,40 @@
         <script type="text/javascript" src="js/rpg_windows.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+<script>
+  const OriginalImage = window.Image;
+
+  function encodePathSegmentsPreservingPct(pathname) {
+    return pathname
+      .split('/')
+      .map(seg => {
+        if (seg.includes("%(")) {
+           return seg.replace("%(", "%25(")
+        }
+        return seg;
+      })
+      .join('/');
+  }
+
+  window.Image = function(width, height) {
+    const img = new OriginalImage(width, height);
+
+    Object.defineProperty(img, "src", {
+      set(value) {
+        img.crossOrigin = 'anonymous';
+        img.setAttribute("src", encodePathSegmentsPreservingPct(value));
+      },
+      get() {
+        return img.getAttribute("src");
+      },
+      configurable: true
+    });
+
+    return img;
+  };
+
+  window.Image.prototype = OriginalImage.prototype;
+</script>
+
     </body>
 </html>
