@@ -1,8 +1,11 @@
 # web-port
+
 all games are hosted on https://gn-math.github.io
 
 ## Credits:
-[98corbins](https://98cornbin.netlify.app): 
+
+[98corbins](https://98cornbin.netlify.app):
+
 - Bendy and the Ink Machine
 - Hotline Miami
 - People Playground
@@ -11,17 +14,33 @@ all games are hosted on https://gn-math.github.io
 - Ultrakill
 
 [burnedpopcorn](https://github.com/burnedpopcorn):
+
 - Pizza Tower
 - Undertale
 - Undertale Yellow
 
 [irv77](https://github.com/irv77):
+
 - FNAF (i fixed some bugs & added fnaf 4 halloween)
 
 [bog/aukak](https://github.com/aukak):
+
 - Milkman Karlson
 
-[Me](https://github.com/genizy): 
+[slqnt](https://github.com/slqntdevss):
+
+- Bowerwhelm
+- Dressing Room
+- Fears to Fathom: Home Alone
+- The Deadseat
+- To The Core
+- GO TO BED
+- Egg Fried Rice
+- Pretend it's not there
+- Stick With It
+
+[Me](https://github.com/genizy):
+
 - Amanda the Adventurer
 - Andy's Apple Farm
 - BFDI: Branches
