@@ -1,7 +1,7 @@
 [submodule "fnaf"]
 	path = fnaf
 	url = https://github.com/genizy/fnaf
-
 [submodule "cuphead"]
 	path = cuphead
 	url = https://github.com/web-ports/cuphead
+	branch = main
